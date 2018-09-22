@@ -1,0 +1,33 @@
+@import '../../styles/consts.scss';
+
+.progressbar{
+  position: relative;
+  width: calc( 100% - 50px);
+  padding: 5px 0;
+
+  &:before{
+    content: '';
+    display: block;
+    height: 5px;
+    position: absolute;
+    top: 5px;
+    background: $gray-lighter;
+    border-radius: 3px;
+    width: 100%;
+  };
+
+  &:after{
+    content: attr(data-value);
+    position: absolute;
+    top: 0;
+    right: -50px;
+  }
+
+  .progress{
+    position: relative;
+    background: $blue;
+    height: 5px;
+    border-radius: 3px;
+    z-index: 10;
+  }
+}
